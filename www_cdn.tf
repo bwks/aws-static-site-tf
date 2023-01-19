@@ -20,7 +20,7 @@ resource "aws_cloudfront_distribution" "web_distribution" {
 
   logging_config {
     include_cookies = false
-    bucket          = "log.www.stratuslabs.net.s3.amazonaws.com"
+    bucket          = "log.www.${var.domain_name}.net.s3.amazonaws.com"
   }
 
   aliases = [var.domain_name, "www.${var.domain_name}"]
